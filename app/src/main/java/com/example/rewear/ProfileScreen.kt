@@ -101,30 +101,37 @@ fun ProfileScreen() {
 @Composable
 private fun ProfileHeader() {
 
-    Row(
+    Box(
         modifier = Modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically
+        contentAlignment = Alignment.Center
     ) {
 
         Image(
             painter = painterResource(id = R.drawable.rewear_logo),
             contentDescription = "Logo REWEAR",
-            modifier = Modifier.size(65.dp)
+            modifier = Modifier
+                .size(65.dp)
+                .align(Alignment.CenterStart)
         )
 
-        Column {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.offset(x = 10.dp)
+        ) {
 
             Text(
                 text = "Twoje konto",
                 color = Accent,
                 fontSize = 22.sp,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center
             )
 
             Text(
-                text = "Mala garderoba. Wiele mozliwosci.",
+                text = "Mała garderoba. Wielkie możliwości.",
                 color = TextGrey,
-                fontSize = 11.sp
+                fontSize = 11.sp,
+                textAlign = TextAlign.Center
             )
         }
     }
