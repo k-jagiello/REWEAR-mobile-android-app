@@ -1,5 +1,4 @@
-
-package com.example.rewear
+package com.example.rewear.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -9,12 +8,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Build
-import androidx.compose.material.icons.filled.Edit
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Place
-import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -37,6 +30,7 @@ import androidx.compose.ui.text.style.TextOverflow
 // Kolory aplikacji REWEAR
 private val Background = Color(0xFF242330)
 private val CardColor = Color(0xFF302E3E)
+private val LighterCardColor = Color(0xFF443A5D)
 private val Accent = Color(0xFFBCB0D0)
 private val TextWhite = Color(0xFFF5F1FA)
 private val TextGrey = Color(0xFFB5B0C5)
@@ -203,8 +197,8 @@ private fun FilterChip(
     selected: Boolean,
     icon: Int? = null
 ) {
-    val backgroundColor = if (selected) Color(0xFF423A59) else CardColor
-    val contentColor = if (selected) Color(0xFFC4B5FD) else TextWhite
+    val backgroundColor = if (selected) LighterCardColor else CardColor
+    val contentColor = if (selected) Accent else TextWhite
 
     Row(
         modifier = Modifier
@@ -366,7 +360,7 @@ private fun AddClothingButton(
             .fillMaxWidth()
             .height(50.dp)
             .clip(RoundedCornerShape(14.dp))
-            .background(Color(0xFFC4B5FD))
+            .background(Accent)
             .clickable { onClick() },
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
@@ -454,7 +448,7 @@ private fun NavigationItem(
                 .size(width = 43.dp, height = 29.dp)
                 .clip(RoundedCornerShape(20.dp))
                 .background(
-                    if (selected) Color(0xFF493C68)
+                    if (selected) LighterCardColor
                     else Color.Transparent
                 ),
             contentAlignment = Alignment.Center
