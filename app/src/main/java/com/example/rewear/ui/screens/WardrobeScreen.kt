@@ -57,7 +57,7 @@ fun WardrobeScreen() {
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            ProfileHeader()
+            WardrobeHeader()
 
             Spacer(modifier = Modifier.height(24.dp))
 
@@ -88,7 +88,7 @@ fun WardrobeScreen() {
 }
 
 @Composable
-private fun ProfileHeader() {
+private fun WardrobeHeader() {
 
     Box(
         modifier = Modifier.fillMaxWidth(),
