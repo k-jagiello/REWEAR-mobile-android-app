@@ -26,6 +26,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
+import coil.compose.AsyncImage
 
 // Kolory aplikacji REWEAR
 private val Background = Color(0xFF242330)
@@ -68,9 +69,11 @@ fun WardrobeScreen() {
 
             Spacer(modifier = Modifier.height(26.dp))
 
+            //jak będziemy już łączyć z bazą to tu trzeba będzie wykonać konwersję z clothingEntity
+            //na clothingItem (fun w Converters)
             val sampleClothes = listOf(
-                ClothingItem(R.drawable.koszula,"Koszula lniana", ClothingStatus.CLEAN_ACTIVE),
-                ClothingItem(name = "Sukienka oliwkowa", status = ClothingStatus.INACTIVE)
+                ClothingItem("android.resource://com.example.rewear/${R.drawable.koszula}","Koszula lniana", ClothingStatus.CLEAN_ACTIVE),
+                ClothingItem(null,name = "Sukienka oliwkowa", status = ClothingStatus.INACTIVE)
             )
 
             WardrobeGrid(items = sampleClothes)
@@ -254,8 +257,8 @@ enum class ClothingStatus(
     )
 }
 
-data class ClothingItem(
-    val image: Int = R.drawable.no_image_clothing,
+class ClothingItem(
+    val image: String?,
     val name: String,
     val status: ClothingStatus
 )
@@ -299,8 +302,10 @@ private fun ClothingCard(
             .background(CardColor)
             .padding(10.dp)
     ) {
-        Image(
-            painter = painterResource(id = item.image),
+        AsyncImage(
+            model = item.image, // może być Stringiem albo nullem
+            fallback = painterResource(id = R.drawable.no_image_clothing), // wyświetli się, gdy imageUri == null
+            error = painterResource(id = R.drawable.no_image_clothing),    // wyświetli się, gdy plik zniknie z telefonu
             contentDescription = item.name,
             contentScale = ContentScale.Crop,
             modifier = Modifier
