@@ -61,7 +61,7 @@ fun ClothingDetailsScreen(
         summer = false,
         autumn = true,
         winter = true,
-        category = "Góry",
+        category = "Topy",
         style = "Codzienne",
         main_color = "Biały",
         colors = arrayListOf()
@@ -361,7 +361,7 @@ private fun ColorsCard(
 
             InfoPill(
                 text = primaryColor,
-                modifier = Modifier.widthIn(min = 140.dp)
+                modifier = Modifier.widthIn(min = 120.dp)
             )
         }
 

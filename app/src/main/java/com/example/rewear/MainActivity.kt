@@ -11,8 +11,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.core.view.WindowCompat
 import com.example.rewear.ui.screens.ClothingDetailsScreen
+import com.example.rewear.ui.screens.EditClothingScreen
 import com.example.rewear.ui.screens.ProfileScreen
 import com.example.rewear.ui.screens.WardrobeScreen
+import com.example.rewear.ui.screens.EditClothingScreen
+import com.example.rewear.ui.screens.OutfitCreatorScreen
 
 class MainActivity : ComponentActivity() {
 
@@ -28,7 +31,9 @@ class MainActivity : ComponentActivity() {
                 ) {
                     //ProfileScreen()
                     //WardrobeScreen()
-                    ClothingDetailsScreen()
+                    //ClothingDetailsScreen()
+                    //EditClothingScreen()
+                    OutfitCreatorScreen()
                 }
             }
         }
