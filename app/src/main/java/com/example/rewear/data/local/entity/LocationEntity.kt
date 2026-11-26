@@ -14,10 +14,16 @@ import androidx.room.PrimaryKey
             parentColumns = ["id"],
             childColumns = ["user_id"],
             onDelete = ForeignKey.CASCADE
+        ),
+        ForeignKey(
+            entity = OutfitEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["outfit_id"],
         )
     ],
     indices = [
-        Index(value = ["user_id"])
+        Index(value = ["user_id"]),
+        Index(value = ["outfit_id"])
     ]
 )
 data class LocationEntity(
@@ -36,5 +42,7 @@ data class LocationEntity(
 
     val video: ArrayList<String> = arrayListOf(),
 
-    val audio: ArrayList<String> = arrayListOf()
+    val audio: ArrayList<String> = arrayListOf(),
+
+    val outfit_id: Long? = null
 )
