@@ -4,6 +4,7 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
+import java.util.Date
 
 @Entity(
     tableName = "outfits",
@@ -29,5 +30,5 @@ data class OutfitEntity(
 
     val collage_uri: String? = null,
 
-    val created_at: Long = System.currentTimeMillis()
+    val created_at: Date = Date()
 )
