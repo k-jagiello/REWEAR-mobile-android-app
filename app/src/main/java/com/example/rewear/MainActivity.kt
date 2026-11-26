@@ -9,9 +9,13 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-import com.example.rewear.ui.profile.ProfileScreen
+import com.example.rewear.ui.screens.ClothingDetailsScreen
+import com.example.rewear.ui.screens.EditClothingScreen
+import com.example.rewear.ui.screens.ProfileScreen
+import com.example.rewear.ui.screens.WardrobeScreen
+import com.example.rewear.ui.screens.EditClothingScreen
+import com.example.rewear.ui.screens.OutfitCreatorScreen
 
 class MainActivity : ComponentActivity() {
 
@@ -24,9 +28,12 @@ class MainActivity : ComponentActivity() {
             MaterialTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = Color(0xFF24212F)
                 ) {
-                    ProfileScreen()
+                    //ProfileScreen()
+                    //WardrobeScreen()
+                    //ClothingDetailsScreen()
+                    //EditClothingScreen()
+                    OutfitCreatorScreen()
                 }
             }
         }
